@@ -1,0 +1,83 @@
+body {
+    position: relative;
+}
+
+.glyphicon {
+    color: black;
+}
+
+.whitetext {
+    color: white;
+}
+
+#collapser {
+    background: rgba(50,150,255, 0.4);
+}
+
+.navbar .nav > li > a {
+    color: white;
+}
+
+.navbar-brand {
+    font-weight: bold !important;
+    color: white !important;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(50,150,255,0.5);
+    border-bottom: 1px solid rgba(50,150,255,0.4);
+
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#myCarousel {
+    margin: 0 auto;
+    max-height: 100%;
+}
+
+#myCarousel img {
+    max-height: 100%;
+    margin: 0 auto;
+}
+
+#login {
+    text-align: center;
+    margin: auto;
+    width: 400px;
+    max-width: 100%;
+    padding: 0 0 20px 0;
+}
+
+#signup {
+    text-align: center;
+    margin: auto;
+    width: 400px;
+    max-width: 100%;
+    padding: 0 0 20px 0;
+}
+
+#signup h3, #login h3 {
+    margin-top: 0;
+    color: #3296FF;
+}
+
+.thumbnail {
+    float: left;
+    margin: 10px 5px 0 5px;
+    background: #FAFAFA;
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+.thumbnail img {
+    border-radius: 10px;
+}
+
+#pages, #forms {
+    border-top: 50px solid #4499ff;
+}
