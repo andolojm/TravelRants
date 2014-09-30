@@ -12,7 +12,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="destinations.php">Destinations</a></li>
-                    <li><a href="login.php">Log In</a></li>
+                    <?php if(true){
+                            echo '<li><a href="login.php">Log In</a></li>';
+                        } else {
+                            echo 'username should go here, panic';
+                        }
+                    ?>
                 </ul>
             </div>
         </div>

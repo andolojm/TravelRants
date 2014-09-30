@@ -1,6 +1,6 @@
 
 <!-- SIGNUP -->
-<div id="signup" style="display: none;">
+<div id="signup" style="display: none;" class="form">
     <h2>Get full access.</h2>
     <h3>Sign up here.</h3>
     <p>It's free and easy, unlike your travel experiences.</p>

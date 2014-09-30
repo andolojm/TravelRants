@@ -1,5 +1,5 @@
 <!-- LOGIN -->
-<div id="login">
+<div id="login" class="form">
     <h2>Want to post your rant?</h2>
     <h3>Log in here.</h3>
     <form method="post" action="welcome.php">

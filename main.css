@@ -6,6 +6,11 @@ body {
     color: black;
 }
 
+.emergency {
+    color: red;
+    text-decoration: underline;
+}
+
 .whitetext {
     color: white;
 }
@@ -45,27 +50,14 @@ body {
     margin: 0 auto;
 }
 
-#login {
-    text-align: center;
-    margin: auto;
-    width: 400px;
-    max-width: 100%;
-    padding: 0 0 20px 0;
-}
-
-#signup {
-    text-align: center;
-    margin: auto;
-    width: 400px;
-    max-width: 100%;
-    padding: 0 0 20px 0;
-}
-
-#signup h3, #login h3 {
+h3, .blue {
     margin-top: 0;
     color: #3296FF;
 }
 
+h4 {
+    color: #3296FF;
+}
 .thumbnail {
     float: left;
     margin: 10px 5px 0 5px;
@@ -80,4 +72,32 @@ body {
 
 #pages, #forms {
     border-top: 50px solid #4499ff;
+}
+
+.form {
+    text-align: center;
+    margin: auto;
+    width: 400px;
+    max-width: 100%;
+    padding: 0 0 20px 0;
+}
+
+#postForm label, #postForm textarea {
+    display: block;
+    padding: 2px;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    max-width: 600px;
+}
+
+hr {
+    width: 100%;
+    max-width: 60%;
+    margin: auto;
+    height: 20px;
 }

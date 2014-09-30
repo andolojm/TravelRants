@@ -12,7 +12,7 @@
 
     //ensure connection
     if($mysqli->connect_errno){
-
+        echo '<p>Server is currently offline, broken, or on fire. Please come back later.</p>';
     } else {
         //prep and execute query
         $query = $mysqli->prepare("SELECT id, name, imageUrl, description FROM Destination");
@@ -30,7 +30,8 @@
                     <h3>' . $name . '</h3>
                     <p>' . $description . '</p>
                     <p>
-                        <a href="reviews.php?id=' . $id . '" class="btn btn-primary" role="button">View Reviews</a>
+                        <a href="reviews.php?id=' . $id . '" class="btn btn-primary" role="button">View Rants</a>
+                        <a href="post.php?id=' . $id . '" class="btn btn-info" role="button">Post a Rant</a>
                     </p>
                     </div>
                 </div>
