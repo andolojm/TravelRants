@@ -42,13 +42,19 @@
             </div>
         </div>
     </div>
-    <!--<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>-->
     </div>
 <!-- END CAROUSEL -->
 
-<?php include('loginForm.php');
-    include('signupForm.php');?>
+<?php
+    // ... ask if we are logged in here:
+    if (!$login->isUserLoggedIn()) {
+        include('loginForm.php');
+        include('signupForm.php');
+    } else {
+        echo '<hr><div class="center"><p>Welcome, <strong>' . $_SESSION['user_name'] . '</strong></p>';
+        echo '<a class="btn btn-primary" href="destinations.php">View All Destinations</a></div>';
+    }
+?>
 
 <!-- END CONTENT -->
 </body>

@@ -1,4 +1,4 @@
 TravelRants
 ===========
 
-PHP project for a capstone software development class. 
+PHP project for a capstone software development class.

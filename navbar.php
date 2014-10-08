@@ -12,10 +12,11 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="destinations.php">Destinations</a></li>
-                    <?php if(true){
+                    <?php if(!$login->isUserLoggedIn()){
                             echo '<li><a href="login.php">Log In</a></li>';
                         } else {
-                            echo 'username should go here, panic';
+                            echo '<li><a href="#">' . $_SESSION['user_name'] . '</a></li>';
+                            echo '<li><a href="logout.php?logout=true">Log Out</a></li>';
                         }
                     ?>
                 </ul>

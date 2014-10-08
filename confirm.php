@@ -24,32 +24,38 @@
         $text = sanitize_html_string($_POST['postText']);
 
         //display that clean, sexy input. GGWP, XSS
-        echo '<h3>' . $displayTitle . '</h3><br />';
-        echo '<p class="blue">' . $displayText . '</p><br />';
+        echo '<h3>' . $title . '</h3><br />';
+        echo '<p class="blue">' . $text . '</p><br />';
 
         //now we'll generate the date of the post - this SHOULD be the format that MySQL is looking for
         $date = date('Y-m-d');
 
-        //get the posting user's ID
-        $userId = "";
+        //let's get that user id - and panic if we don't have one
+        if(isset($_SESSION['user_id'])){
+            $userId = $_SESSION['user_id'];
 
-        //database all that fun stuff we prepared above.
-        $mysqli = new mysqli('localhost','root','','TravelSite');
+            //database all that fun stuff we prepared above.
+            $mysqli = new mysqli('localhost','root','','TravelSite');
 
-        //ensure connection
-        if($mysqli->connect_errno){
-            header('Location: ./error.php');
+            //ensure connection
+            if($mysqli->connect_errno){
+                header('Location: ./error.php');
+            } else {
+                //if we're connected, prepare and execute the query
+                $query = $mysqli->prepare("INSERT INTO rant (userId,destId,date,title,text) VALUES (?,?,?,?,?)");
+
+                $query->bind_param("iisss", $userId,$id,$date,$title,$text);
+                $query->execute();
+                echo '<a href="reviews.php?id=' . $id . '" class="btn btn-primary">Check this review out on the main page</a>';
+            }
+
+        //User isn't logged in! Panic and scream and be generally disappointed in your users
         } else {
-            //if we're connected, prepare and execute the query
-            $query = $mysqli->prepare("INSERT INTO Rant (userId,destId,date,title,text) VALUES (?,?,?,?,?)");
-
-            $query->bind_param("iisss", $userId,$id,$date,$title,$text);
-            $query->execute();
+            echo '<p class="blue">Thanks for the rant, but you\'re not logged in. Please log in to submit a rant.</p>';
         }
     }
 ?>
 
-<a href="reviews.php?id=<?php echo $id;?>" class="btn btn-primary">Check this review out on the main page</a>
 </div>
 </div>
 </body>
